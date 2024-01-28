@@ -1,6 +1,5 @@
 -- lua/zfogg/init.lua
 
-print("zfogging")
 require("zfogg.util")
 require("zfogg.settings")
 --require("zfogg.plugins")

@@ -4,7 +4,7 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    enabled = true,
+    enabled = false,
     ---@type Flash.Config
     opts = {
       char = {
@@ -18,23 +18,47 @@ return {
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require 'nvim-treesitter.install'.prefer_git = false
+      --require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
     end,
   },
 
   {
     "telescope.nvim",
-    --config = function(opts)
-      --print(opts)
-    --end,
+    opts = { },
     dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      --build = "make",
-      build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        --build = "make",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end,
+      },
+      {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+          require"telescope".load_extension("frecency")
+        end,
+        dependencies = {
+          "kkharji/sqlite.lua",
+          config = function()
+            vim.g.sqlite_clib_path = 'C:/Users/Zachary/.dll/sqlite3.dll'
+          end,
+        },
+      },
     },
   },
+
+  --{
+    --"yanky.nvim",
+    --dependencies = {
+      --"telescope.nvim",
+    --},
+    --config = function(plugin, opts)
+      --plugin.setup(opts)
+      --require("telescope").load_extension("yank_history")
+    --end,
+  --},
 
   {
     "preservim/nerdcommenter"
@@ -42,6 +66,16 @@ return {
 
   {
     "tpope/vim-surround",
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      { "<leader>f<space>", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
+    },
+    config = function()
+      require("neo-tree").setup()
+    end,
   },
 
   --{

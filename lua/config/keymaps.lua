@@ -1,15 +1,39 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
-vim.g.mapleader = ","
 
 vim.keymap.set("n", ";", ":")
 
-vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = true })
-vim.keymap.set("n", "<leader>q", ":q<cr>")
+-- FIXME: make this flash the screen when i save maybe with operator-flashy or something
+vim.keymap.set("n", "<leader>w", "<cmd>silent w<cr>", { silent = true })
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
 
 vim.keymap.set("n", "<leader>c<space>", "<Plug>NERDCommenterToggle")
 vim.keymap.set("x", "<leader>c<space>", "<Plug>NERDCommenterToggle")
+
+vim.keymap.set("n", "<leader>n<space>", "<cmd>Neotree toggle reveal show<cr>")
+
+-- Telescope
+--vim.keymap.set("n", "<c-t><c-t>", ":Telescope builtin<cr>", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<c-t>g", ":Telescope git_files<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<c-g>", ":Telescope git_files<cr>", { noremap = true, silent = true })
+
+-- Grep live
+vim.keymap.set("n", "<c-t>f", ":Telescope live_grep<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<c-f>", ":Telescope live_grep<cr>", { noremap = true, silent = true })
+
+-- Frequent files
+vim.keymap.set("n", "<C-t>p", function()
+  require("telescope").extensions.frecency.frecency({ workspace = "CWD" })
+end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-p>", function()
+  require("telescope").extensions.frecency.frecency({ workspace = "CWD" })
+end, { noremap = true, silent = true })
+
+-- Diagnostics
+vim.keymap.set("n", "<c-t>l", ":Telescope diagnostics<cr>", { noremap = true, silent = true })
+--vim.keymap.set("n", "<c-l>", ":Telescope diagnostics<cr>", { noremap = true, silent = true })
 
 vim.cmd([[
 inoremap <C-c> <Esc>

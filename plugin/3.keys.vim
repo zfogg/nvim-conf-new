@@ -2,8 +2,9 @@
 scriptencoding utf-8
 
 
-let mapleader      = ','
-let maplocalleader = ','
+" Done in lua now
+"let mapleader      = ','
+"let maplocalleader = ','
 
 
 inoremap <C-c> <Esc>

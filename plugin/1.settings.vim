@@ -126,7 +126,7 @@ set viewoptions+=cursor,curdir,folds
     set cpo+=d cpo-=D  " cpo-d cpo-D
     set cpo+=Ee        " cpo-E cpo-e
     set cpo+=fF        " cpo-f cpo-F
-    "set cpo+=I         " cpo-I
+    set cpo+=I         " cpo-I
     set cpo-=i         " cpo-i
     set cpo-=J         " cpo-J
     set cpo-=K         " cpo-K
@@ -198,7 +198,8 @@ set viewoptions+=cursor,curdir,folds
     set preserveindent
     set tabstop=2       " <Tab> inserts n spaces.
     set softtabstop=2   " <BS> over an autoindent deletes both spaces.
-    set shiftwidth=0    " An indent level is n spaces.
+    "set shiftwidth=0    " An indent level is n spaces.
+    set shiftwidth=2    " An indent level is n spaces.
     set shiftround      " Rounds indent to a multiple of shiftwidth.
     set nowrap          " Don't wrap text.
     set linebreak       " Don't wrap textin the middle of a word.
@@ -238,19 +239,20 @@ set viewoptions+=cursor,curdir,folds
 
 " shortmess {{{
     " NOTE: Vim default "filnxtToOF"
-    "set shortmess=aOstTI " :help 'shortmess'
-    set shm+=a  " shortcut for shm+=ailmnrwx
-    set shm-=O
-    set shm+=O
-    set shm+=s
-    set shm+=t
-    set shm+=T
-    set shm-=W
-    set shm-=A
-    set shm+=I
-    set shm+=c
-    set shm-=q
-    set shm-=F
+    ":set shortmess=aOstTI " :help 'shortmess'
+    "
+    "set shm+=a  " shortcut for shm+=ailmnrwx
+    "set shm-=O
+    "set shm+=O
+    "set shm+=s
+    "set shm+=t
+    "set shm+=T
+    "set shm-=W
+    "set shm-=A
+    "set shm+=I
+    "set shm+=c
+    "set shm-=q
+    "set shm-=F
 " }}}
 
 

@@ -9,12 +9,20 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins", version = "*" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+
+    -- INFO: import your settings right after LazyVim because it sets mapleader and other stuff
+    -- okay nvm deleted it and using config/options.lua
+    --
+    --{ import = "settings" },
+
     -- import any extras modules here
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
+
+    -- my plugins directory
     { import = "plugins" },
   },
   defaults = {
@@ -23,10 +31,10 @@ require("lazy").setup({
     lazy = false,
     -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
     -- have outdated releases, which may break your Neovim install.
-    --version = false, -- always use the latest git commit
-    version = "*", -- try installing the latest stable version for plugins that support semver
+    version = false, -- always use the latest git commit
+    -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "tokyonight" } },
+  install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
