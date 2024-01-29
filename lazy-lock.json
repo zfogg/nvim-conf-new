@@ -54,6 +54,7 @@
   "nvim-web-devicons": { "branch": "master", "commit": "7fd8d7f08be824d9d362fb2d9800b84eb15786c1" },
   "persistence.nvim": { "branch": "main", "commit": "4982499c1636eac254b72923ab826ee7827b3084" },
   "plenary.nvim": { "branch": "master", "commit": "663246936325062427597964d81d30eaa42ab1e4" },
+  "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "rust-tools.nvim": { "branch": "master", "commit": "676187908a1ce35ffcd727c654ed68d851299d3e" },
   "sqlite.lua": { "branch": "master", "commit": "b7e28c8463254c46a8e61c52d27d6a2040492fc3" },
   "symbols-outline.nvim": { "branch": "master", "commit": "564ee65dfc9024bdde73a6621820866987cbb256" },
@@ -64,8 +65,10 @@
   "todo-comments.nvim": { "branch": "main", "commit": "833d8dd8b07eeda37a09e99460f72a02616935cb" },
   "tokyonight.nvim": { "branch": "main", "commit": "e3301873c1e96903daebb98cc9b5926810bf73dd" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
+  "typescript-vim": { "branch": "master", "commit": "eafdcf5e9ee73b43d92372d69dd84458bf98c5e3" },
   "venv-selector.nvim": { "branch": "main", "commit": "fcb30164f2c4f8a34a305ead3247954a1fd8634f" },
   "vim-illuminate": { "branch": "master", "commit": "97c1265ff0b67064b6cfdc15bafc50202a537ae2" },
+  "vim-jsx-typescript": { "branch": "master", "commit": "22df470d92651426f2377e3166488672f7b4b4ef" },
   "vim-startuptime": { "branch": "master", "commit": "454b3de856b7bd298700de33d79774ca9b9e3875" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
