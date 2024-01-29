@@ -94,6 +94,8 @@ return {
 
   --{ "nvim-ts-autotag", enabled = false },
 
+  { "neo-tree.nvim", enabled = false },
+
   -- FIXME:
   -- surrounder / pair actions
   -- commenter (<leader>c<space>)
