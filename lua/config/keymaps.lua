@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
 vim.keymap.set("n", "<leader>c<space>", "<Plug>NERDCommenterToggle")
 vim.keymap.set("x", "<leader>c<space>", "<Plug>NERDCommenterToggle")
 
-vim.keymap.set("n", "<leader>n<space>", "<cmd>Neotree toggle reveal show<cr>")
+--vim.keymap.set("n", "<leader>n<space>", "<cmd>Neotree toggle reveal show<cr>")
 
 -- Telescope
 --vim.keymap.set("n", "<c-t><c-t>", ":Telescope builtin<cr>", { noremap = true, silent = true })
