@@ -57,6 +57,9 @@ return {
   { 'moll/vim-bbye',
     keys = { '<leader>q', },
     cmd = { 'Bdelete', 'Bwipeout', },
+    init = function()
+      vim.keymap.set("n", "<leader>q", "<cmd>Bdelete<cr>")
+    end,
   },
 
   -- FIXME:

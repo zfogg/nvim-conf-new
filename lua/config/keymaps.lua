@@ -6,7 +6,7 @@ vim.keymap.set("n", ";", ":")
 
 -- FIXME: make this flash the screen when i save maybe with operator-flashy or something
 vim.keymap.set("n", "<leader>w", "<cmd>silent w<cr>", { silent = true })
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>") -- INFO: set by vim-bbye
 vim.keymap.set(
   "n",
   "<leader>wq",
