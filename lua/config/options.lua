@@ -25,16 +25,17 @@ vim.g.netrw_dirhistmax = 0
 o.exrc = true
 o.secure = true
 
-vim.o.sessionoptions = "curdir,"
+vim.o.sessionoptions = "blank,"
+  .. "buffers,"
+  .. "curdir,"
+  .. "folds,"
+  .. "help,"
   .. "tabpages,"
   .. "winsize,"
-  .. "help,"
-  .. "globals,"
-  .. "skiprtp,"
-  .. "folds,"
-  .. "options,"
-  .. "resize,"
-  .. "winpos"
+  .. "winpos,"
+  .. "terminal,"
+  .. "localoptions,"
+  .. "resize"
 
 vim.cmd([[
 set path=.,,**
@@ -296,3 +297,11 @@ end
 -- this doesn't work lol
 --vim.opt.shell = "C:\\WINDOWS\\system32\\wsl.exe -d Arch -u loomen --cd " .. vim.fn.getcwd()
 --vim.g.terminal_emulator = "powershell"
+
+vim.cmd([[
+let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
+let &shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;'
+let &shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+let &shellpipe  = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+set shellquote= shellxquote=
+]])

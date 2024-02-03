@@ -16,9 +16,9 @@ return {
     "junegunn/fzf.vim",
   },
 
-  cmd = { "Fern" },
-
-  keys = { keys.toggle, keys.nice },
+  -- Lazy on start so we can use sessions and the directory viewer
+  --cmd = { "Fern" },
+  --keys = { keys.toggle, keys.nice },
 
   init = function()
     vim.cmd([[

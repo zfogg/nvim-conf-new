@@ -16,6 +16,7 @@ return {
 
   {
     "nvim-treesitter/nvim-treesitter",
+    --enabled = false,
     config = function()
       require 'nvim-treesitter.install'.prefer_git = false
       --require 'nvim-treesitter.install'.compilers = { "clang", "gcc" }
@@ -43,12 +44,7 @@ return {
 
   {
     "nvim-neo-tree/neo-tree.nvim",
-    keys = {
-      { "<leader>f<space>", "<cmd>Neotree toggle<cr>", desc = "NeoTree" },
-    },
-    config = function()
-      require("neo-tree").setup()
-    end,
+    enabled = false,
   },
 
 
@@ -58,27 +54,12 @@ return {
     },
   },
 
-  --{
-  --"folke/noice.nvim",
-    --enabled = false,
-    --opts = {
-      --notify = {
-        --enabled = false,
-      --},
-    --},
-  --},
-
-  --{ "rcarriga/nvim-notify", enabled = false },
-
-  --{ "nvim-treesitter", enabled = false },
-
-  --{ "nvim-ts-autotag", enabled = false },
-
-  { "neo-tree.nvim", enabled = false },
+  { 'moll/vim-bbye',
+    keys = { '<leader>q', },
+    cmd = { 'Bdelete', 'Bwipeout', },
+  },
 
   -- FIXME:
-  -- surrounder / pair actions
-  -- commenter (<leader>c<space>)
   -- ctrl-c to clear flash.nvim searches
   -- ,<space> to clear comments
   -- autoformatting on save

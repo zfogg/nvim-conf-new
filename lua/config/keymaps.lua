@@ -7,6 +7,12 @@ vim.keymap.set("n", ";", ":")
 -- FIXME: make this flash the screen when i save maybe with operator-flashy or something
 vim.keymap.set("n", "<leader>w", "<cmd>silent w<cr>", { silent = true })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set(
+  "n",
+  "<leader>wq",
+  ":normal " .. vim.g.mapleader .. "w" .. vim.g.mapleader .. "q<cr>",
+  { noremap = true, silent = true }
+)
 
 vim.keymap.set("n", "<leader>c<space>", "<Plug>NERDCommenterToggle")
 vim.keymap.set("x", "<leader>c<space>", "<Plug>NERDCommenterToggle")
@@ -15,6 +21,10 @@ vim.keymap.set("x", "<leader>c<space>", "<Plug>NERDCommenterToggle")
 
 -- Telescope
 --vim.keymap.set("n", "<c-t><c-t>", ":Telescope builtin<cr>", { noremap = true, silent = true })
+
+-- Find files
+vim.keymap.set("n", "<c-t><c-f>", ":Telescope find_files<cr>", { noremap = true, silent = true })
+--vim.keymap.set("n", "<leader><c-f>", ":Telescope find_files<cr>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<c-t>g", ":Telescope git_files<cr>", { noremap = true, silent = true })
 vim.keymap.set("n", "<c-g>", ":Telescope git_files<cr>", { noremap = true, silent = true })
